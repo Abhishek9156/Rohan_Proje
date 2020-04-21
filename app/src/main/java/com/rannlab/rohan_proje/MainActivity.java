@@ -26,7 +26,7 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
     EditText ssc,hsc,ufy,usy,uty,pfy,psy,pty;
-    String sssc,shsc,sufy,suty,susy,spfu,spsy,spty;
+    String sssc,shsc,sufy,suty,susy,spfy,spsy,spty;
     Button showbtn,savebtn;
     RequestQueue requestQueue;
     @Override
@@ -54,6 +54,9 @@ public class MainActivity extends AppCompatActivity {
         sufy=ufy.getText().toString().trim();
         susy=usy.getText().toString().trim();
         suty=uty.getText().toString().trim();
+        spfy=pfy.getText().toString().trim();
+        spsy=psy.getText().toString().trim();
+        spty=pty.getText().toString().trim();
 
 
         StringRequest stringRequest=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
@@ -76,6 +79,9 @@ public class MainActivity extends AppCompatActivity {
                 map.put("ufy",sufy);
                 map.put("usy",susy);
                 map.put("uty",suty);
+                map.put("pfy",spfy);
+                map.put("psy",spsy);
+                map.put("pty",spty);
 
                 return map;
             }
